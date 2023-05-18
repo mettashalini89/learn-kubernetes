@@ -8,6 +8,8 @@ spec:
   containers:
     - name: frontend
       image: 780395309002.dkr.ecr.us-east-1.amazonaws.com/shipping:2.0.0
+      command: [ "sleep" ]
+      args: [ "infinity" ]
 
 ---
 apiVersion: v1
