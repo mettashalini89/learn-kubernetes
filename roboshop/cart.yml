@@ -13,7 +13,7 @@ spec:
   initContainers:
     - name: aws-ssm-param-store
       image: 780395309002.dkr.ecr.us-east-1.amazonaws.com/aws-ssm-param-store:2.0.0
-      args: [ "aws sample:dev.docdb.pass "]
+      args: [ "sample:dev.docdb.pass "]
 
 
 ---
