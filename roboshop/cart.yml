@@ -2,8 +2,8 @@ apiVersion: v1
 kind: ServiceAccount
 metadata:
   name: cart
-annotations:
-  eks.amazonaws.com/role-arn: arn:aws:iam::780395309002:role/ssm-for-eks
+  annotations:
+    eks.amazonaws.com/role-arn: arn:aws:iam::780395309002:role/ssm-for-eks
 
 ---
 apiVersion: v1
