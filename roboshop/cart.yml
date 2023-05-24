@@ -15,14 +15,24 @@ metadata:
 spec:
   serviceAccountName: cart
   containers:
-    - name:  frontend
+    - name:  cart
       image: 780395309002.dkr.ecr.us-east-1.amazonaws.com/cart:2.0.0
       command: [ "sleep" ]
       args: [ "infinity" ]
+      volumeMounts:
+        - mountPath: /params
+          name: params
   initContainers:
     - name: aws-ssm-param-store
       image: 780395309002.dkr.ecr.us-east-1.amazonaws.com/aws-ssm-param-store:2.0.1
       args: [ "sample:dev.docdb.pass" ]
+      volumeMounts:
+        - mountPath: /params
+          name: params
+  volumes:
+    - name: params
+      emptyDir:
+        sizeLimit: 100Mi
 
 
 ---
